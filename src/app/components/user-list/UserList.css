@@ -49,6 +49,10 @@
     justify-content: space-between;
 }
 
+.price {
+    width: 100%;
+}
+
 .bottom-block {
     width: 100%;
     display: flex;
@@ -65,10 +69,15 @@
 
 .icon {
     cursor: pointer;
+    color: #5df37b;
 }
 
 .icon:hover {
-    background-color: rgba(0, 0, 0, 0.3);
+    color: #43b65a;
+}
+
+.icon:active {
+    color: #5df37b;
 }
 
 .model {

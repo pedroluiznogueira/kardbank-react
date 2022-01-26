@@ -28,21 +28,17 @@ function UserList() {
             {users.map((user) => (
                 <div className="card">
                     <div className="vehicle-info">
+                        <img src="" alt="" />
                         <div className="upper-block">
                             <h2 className="name" style={{color: 'white'}}>{user.name}</h2>
-                            <h2 className="price" style={{color: 'green'}}>$ {user.price}</h2>
-                        </div>
-                        <div className="bottom-block">
-                            <div className="text-block">
-                                <div className="model" style={{color: 'white'}}>{user.model}</div>
-                                <div className="brand" style={{color: 'white'}}>{user.brand}</div>
-                            </div>
                             <div className="icon-block">
                                 <FaPlus className="icon" onClick={handlePlus} />
                                 <FaTrash className="icon" onClick={() => {handleTrash(user.id)}} />
-                                <FaEdit className="icon" onClick={() => {handleEdit(user.id)}} />
+                                <FaEdit className="icon"  onClick={() => {handleEdit(user.id)}} />
                             </div>
                         </div>
+                        <div className="price" style={{color: 'white'}}><span style={{color: '#5df37b'}}>Email: </span>{user.email}</div>
+                        <div className="model" style={{color: 'white'}}><span style={{color: '#5df37b'}}>CPF: </span> {user.cpf}</div>
                     </div>
                 </div>
             ))}
