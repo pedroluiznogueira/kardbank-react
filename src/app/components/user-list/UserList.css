@@ -32,6 +32,11 @@
     width: 100%;
 }
 
+.img img {
+    height: 190px;
+    width: 100%;
+}
+
 .vehicle-info {
     height: 100%;
     width: 100%;

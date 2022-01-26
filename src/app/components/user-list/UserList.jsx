@@ -8,6 +8,8 @@ function UserList() {
     const {users, userIdEmitter, deleteUser, formGoalEmitter, formModeEmitter} = useContext(UserContext);
     const navigate = useNavigate();
 
+    const bucketUrl = "https://udeyou.s3.sa-east-1.amazonaws.com/";  
+
     const handlePlus = () => {
         formGoalEmitter('plus');
         formModeEmitter(true);
@@ -29,6 +31,9 @@ function UserList() {
         <div className="catalog">
             {users.map((user) => (
                 <div className="card">
+                    <div className="img">
+                        <img src={bucketUrl + user.imagePath}  alt="" />
+                    </div>
                     <div className="vehicle-info">
                         <img src="" alt="" />
                         <div className="upper-block">
