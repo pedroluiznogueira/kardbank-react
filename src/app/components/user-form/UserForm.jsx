@@ -3,6 +3,7 @@ import spinner from '../../common/spinner/spinner.gif';
 import { useNavigate } from 'react-router-dom';
 import './UserForm.css';
 import UserContext from '../../context/UserContext';
+import Navbar from './../../common/navbar/Navbar';
 
 const user = {
     name: '',
@@ -64,7 +65,8 @@ function UserForm() {
 
     return (
         <>
-            <div className="container">
+            <Navbar navigation={"Go Back"}/>
+            <div className="catalog">
                 <form className="plus-form" onSubmit={handleSubmit}>
                     <h3>Vehicle {formGoal}</h3>
                     <div className="input-block">

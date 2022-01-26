@@ -6,6 +6,7 @@ export const UserProvider = ( {children} ) => {
     const [users, setUsers] = useState([]);
     const [userId, setUserId] = useState(null);
     const [formGoal, setFormGoal] = useState('');
+    const [onFormMode, setOnFormMode] = useState(false);
 
     const url = 'http://localhost:8080';
 
@@ -23,6 +24,10 @@ export const UserProvider = ( {children} ) => {
 
     const formGoalEmitter = (goal) => {
         setFormGoal(goal);
+    }
+
+    const formModeEmitter = (onFormMode) => {
+        setOnFormMode(onFormMode);
     }
 
     const registerUser = async (user) => { 
@@ -72,11 +77,13 @@ export const UserProvider = ( {children} ) => {
         <UserContext.Provider value={{
             users: users,
             formGoal: formGoal,
+            onFormMode: onFormMode,
             userIdEmitter: userIdEmitter,
             formGoalEmitter: formGoalEmitter,
             registerUser: registerUser,
             updateUser: updateUser,
             deleteUser: deleteUser,
+            formModeEmitter: formModeEmitter
         }}>
             {children}
         </UserContext.Provider>

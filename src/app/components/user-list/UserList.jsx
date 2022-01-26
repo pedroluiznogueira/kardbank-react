@@ -5,17 +5,19 @@ import './UserList.css';
 import UserContext from '../../context/UserContext';
 
 function UserList() {
-    const {users, userIdEmitter, deleteUser, formGoalEmitter} = useContext(UserContext);
+    const {users, userIdEmitter, deleteUser, formGoalEmitter, formModeEmitter} = useContext(UserContext);
     const navigate = useNavigate();
 
     const handlePlus = () => {
         formGoalEmitter('plus');
+        formModeEmitter(true);
         navigate('/form');
     }
     
     const handleEdit = (id) => {
         userIdEmitter(id);
         formGoalEmitter('edit');
+        formModeEmitter(true);
         navigate('/form');
     }
     
