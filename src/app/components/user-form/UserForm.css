@@ -61,17 +61,17 @@ input[type="file"] {
     border: 1px solid #010409;
     border-radius: 15px;
     background-color: #010409;
-    color: rgb(88, 166, 255);
+    color: #5dec79;
     cursor: pointer;
     font-size: 20px;
 }
 
 .input-block #image-label:hover {
-    color: #31629B;
+    color: #46af5b;
 }
 
 .input-block #image-label:active {
-    color: rgb(88, 166, 255);
+    color: #5dec79;
 }
 
 .btn {
