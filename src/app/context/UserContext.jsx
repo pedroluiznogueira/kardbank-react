@@ -1,4 +1,5 @@
 import { createContext, useState, useEffect } from 'react';
+import axios from "axios";
 
 const UserContext = createContext();
 
@@ -28,6 +29,10 @@ export const UserProvider = ( {children} ) => {
 
     const formModeEmitter = (onFormMode) => {
         setOnFormMode(onFormMode);
+    }
+
+    const uploadFile = async (formData) => {
+        const response = await axios.post(`${url}/upload-file`, formData);
     }
 
     const registerUser = async (user) => { 
@@ -81,6 +86,7 @@ export const UserProvider = ( {children} ) => {
             formGoal: formGoal,
             onFormMode: onFormMode,
             userIdEmitter: userIdEmitter,
+            uploadFile: uploadFile,
             formGoalEmitter: formGoalEmitter,
             registerUser: registerUser,
             updateUser: updateUser,

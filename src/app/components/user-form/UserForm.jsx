@@ -17,13 +17,27 @@ function UserForm() {
     const [emailText, setEmailText] = useState('');
     const [cpfText, setCpfText] = useState('');
     const [isLoading, setIsLoading] = useState(false);
-    const {updateUser, registerUser, formGoal} = useContext(UserContext);
+    const [selectedFile, setSelectedFile] = useState(null);
+    const {uploadFile, updateUser, registerUser, formGoal} = useContext(UserContext);
 
     const handleSubmit = (e) => {
         e.preventDefault();
         setIsLoading(true);
 
+        const formData = new FormData();
+        formData.append(
+            "file",
+            selectedFile,
+            selectedFile.name
+        );
+
+        uploadFile(formData);
+
         handleUser(formGoal);
+    }
+
+    const onFileChange = (e) => {
+        setSelectedFile(e.target.files[0])
     }
 
     const handleUser = (goal) => {
@@ -95,6 +109,10 @@ function UserForm() {
                             value={cpfText}
                             onChange={handleCpfChange}
                         />    
+                    </div>
+                    <div className="input-block">
+                        <label id="image-label" htmlFor="image">Upload Image</label>
+                        <input onChange={onFileChange} id="image" type="file" />    
                     </div>
                     <div id="feedback" className="input-block">
                     {
