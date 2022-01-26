@@ -49,6 +49,7 @@ export const UserProvider = ( {children} ) => {
     }
 
     const updateUser = async (user) => {
+        console.log("called update");
         const response = await fetch(`${url}/users/update/${userId}`, {
             method: 'PUT',
             headers: {
@@ -58,8 +59,9 @@ export const UserProvider = ( {children} ) => {
             body: JSON.stringify(user)
         });
         const data = await response.json();
+        console.log(data);
         setUsers(users.map((user) => (user.id === userId ? {...user, ...data}: user))); 
-        return data;
+        return response;
     }
 
     const deleteUser = async (userId) => {

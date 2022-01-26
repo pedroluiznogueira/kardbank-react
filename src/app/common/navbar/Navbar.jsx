@@ -7,6 +7,10 @@ function Navbar({ navigation }) {
     const navigate = useNavigate();
     const {onFormMode} = useContext(UserContext);
 
+    const handleHome = () => {
+        navigate("/");
+    }
+
     const handleGoBack = () => {
         navigate('/');
     }
@@ -14,7 +18,7 @@ function Navbar({ navigation }) {
     return(
         <nav className="navbar">
             <div className="logo-block">
-                <h1 className="logo">Kardbank</h1>
+                <h1 onClick={handleHome} className="logo">Kardbank</h1>
             </div>
             {
                 onFormMode ?

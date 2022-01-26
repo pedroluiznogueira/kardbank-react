@@ -68,7 +68,7 @@ function UserForm() {
             <Navbar navigation={"Go Back"}/>
             <div className="catalog">
                 <form className="plus-form" onSubmit={handleSubmit}>
-                    <h3>Vehicle {formGoal}</h3>
+                    <h3>User {formGoal}</h3>
                     <div className="input-block">
                         <label htmlFor="name">Name</label>
                         <input 
