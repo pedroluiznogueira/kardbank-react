@@ -9,7 +9,7 @@ export const UserProvider = ( {children} ) => {
     const [formGoal, setFormGoal] = useState('');
     const [onFormMode, setOnFormMode] = useState(false);
 
-    const url = 'http://localhost:8080';
+    const url = 'https://kardbank-api.herokuapp.com';
 
     useEffect(() => {
         fetchUsers();
