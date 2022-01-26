@@ -1,7 +1,14 @@
 import './App.css';
+import Navbar from './app/common/navbar/Navbar';
+import UserList from './app/components/user-list/UserList';
 
 function App() {
-  return (<h1>App Component</h1>);
+  return (
+    <>
+      <Navbar />
+      <UserList />
+    </>
+  );
 }
 
 export default App;
