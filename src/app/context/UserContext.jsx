@@ -32,6 +32,7 @@ export const UserProvider = ( {children} ) => {
     }
 
     const uploadFile = async (formData) => {
+        console.log(formData);
         const response = await axios.post(`${url}/upload-file`, formData);
     }
 

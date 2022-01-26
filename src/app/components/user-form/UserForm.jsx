@@ -8,7 +8,8 @@ import Navbar from './../../common/navbar/Navbar';
 const user = {
     name: '',
     email: '',
-    cpf: ''
+    cpf: '',
+    imagePath: ''
 }
 
 function UserForm() {
@@ -44,6 +45,7 @@ function UserForm() {
         user.name = nameText;
         user.email = emailText;
         user.cpf = cpfText;
+        user.imagePath = selectedFile.name;
 
         if (formGoal === 'plus') {
             const promise = registerUser(user);
