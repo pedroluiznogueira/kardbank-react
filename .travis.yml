@@ -7,9 +7,9 @@ before_install:
   - docker build -t pedroluiznogueira/kardbank:"$VERSION" -f Dockerfile.dev .
 
 script:
-  - docker run -e CI=true pedroluiznogueira/kardbank npm run test -- --watch=false --coverage --passWithNoTests
+  - docker run -e CI=true pedroluiznogueira/kardbank:"$VERSION" npm run test -- --watch=false --coverage --passWithNoTests
 
 after_success:
   - docker build -t pedroluiznogueira/kardbank:"$VERSION" .
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - docker push pedroluiznogueira/kardbank && docker push pedroluiznogueira/kardbank:"$VERSION"
+  - docker push pedroluiznogueira/kardbank:"$VERSION"
